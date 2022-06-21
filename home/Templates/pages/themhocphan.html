@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'CSS/dangnhap.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/dangky.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/themhocphan.css'%}">
+    </head>
+    <body>
+        <script src="" async defer></script>
+        <div class="header-w3l">
+            <h1>Thêm học phần mới</h1>
+        </div>
+        <div class="main-content-agile">
+            <div class="sub-main-w3">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form}}
+                    <div class="sub-w3l">
+                        <div class="right-w3l">
+                            <div class="right-w3l">
+                                <input type="submit" value = "Thêm"/>
+                                <a id='thoat' href='../xemdanhsachhocphan'>Thoát<a>
+                            </div>
+                        </div>
+                    </div>
+                    {% if thongbao == null %}
+                    {%else%}
+                    <h4 class='thongbao'>Học phần đã tồn tại</h4>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

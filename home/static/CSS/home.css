@@ -1,0 +1,242 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html
+{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container
+{
+    width: 100%;
+    max-height: auto;
+    background-color:rgba(230, 248, 255, 0.863);
+    position:relative;
+}
+.content{
+    width: 97%;
+    height: 630px;
+    margin-left: 20px;
+    align-items: center;
+    background: url(../IMG/home.png)no-repeat center top;
+}
+/* HEADER */
+.header
+{
+    display:flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 60px;
+    background-color: #51DBFF;
+    justify-content: space-between;
+    /* margin: 0 10px; */
+    padding: 0 10px;
+    align-items: center;
+    position:fixed;
+    z-index: 3;
+   
+
+}
+.header .header_start
+{
+    display: flex;
+    align-items: center;
+    min-width: 1100px;
+}
+.header_start span
+{
+    font-size: 37px;
+    margin-bottom: 10px;
+    color:#5154FF;
+    font-weight: 600;
+    text-shadow:3px -3px 3px #5154FF;
+}
+
+.menu
+{
+    display:flex;
+    list-style-type: none;
+    align-items: center;
+    /* color: #fff; */
+    cursor:pointer;
+    width: 100%;
+    padding-top: 10px;
+}
+.menu a 
+{
+    font-size: 25px;
+    font-weight:600;
+    text-decoration: none;
+    color:white;
+    /* color:rgb(41, 10, 126); */
+    padding: 8px 16px;
+    margin-left: 20px;
+}
+
+.menu li 
+{   
+    height:auto;
+    width:auto;
+
+    font-size: 22px;
+    margin:2px;
+    border-radius: 10px;
+    margin-right: 70px;
+}
+.menu input
+{
+    margin-left: 0px;
+    height: 30px;
+    border: 0;
+    border-radius: 15px;
+    padding-left: 10px;
+    width: 130px;
+    margin-bottom: 33px;
+}
+.header>li:hover>a
+{
+    color:white;
+    border-radius: 10px;
+    background-color: rgb(125, 133, 192);
+    transition: ease 0.5s;
+
+}
+.dropdown{
+    margin-right: 40px;
+    margin-top: 10px;
+}
+.dropbtn
+{
+    color:rgb(46, 46, 223);
+    padding: 5px 10px;
+}
+/* Dropdown Button */
+.dropbtn {
+    color: white;
+    margin-left: 15px;
+    border: none;
+    cursor: pointer;
+    text-decoration:none;
+    padding: 5px 6px;
+    background-color:#E76990;
+    border-radius:5px;
+    font-style:initial;
+    color:white;
+    font-size: 20px;
+    margin-top: -20px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+    width: 100px;
+    height: 40px;
+    /*background-color:white;*/
+}
+.menu li:hover a{
+    color: #FFF900;
+}
+/* ĐỔi màu nền khi hover và focus Dropdown button */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #5154FF;
+    transition: 1s;
+}
+.dropdown-content{
+    display:block;
+}
+/* Định dạng các thẻ bao bọc các menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Dropdown Content, mặc định sẽ được ẩn đi */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f8192b;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(2, 2, 2, 0.2);
+    z-index: 1;
+    padding-left: 8px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+ 
+/* Định dạng các thẻ a là các menu con */
+.dropdown-content a {
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+}
+ 
+/* Thay đổi màu nền khi các menu con được hover */
+.dropdown-content a:hover {background-color: #f8192b}
+ 
+/* Hiển thị menu, ta sẽ dùng javascript để thêm class này vào các nôi dung cần được hiển thị */
+.show {display:block;}
+
+.footer p
+{
+    padding-top: 80px;
+    font-size: 20px;
+    font-style: italic;
+    margin-left: 30px;
+    height: auto;
+}
+.hocphan{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+}
+.gioithieu{
+    background: url(../IMG/home.png)no-repeat center top;
+}
+.card_hp
+{
+    margin: 25px;
+    height: 200px;
+    width: 395px;
+    border-radius: 20px;
+    border: 0;
+    text-decoration: none;
+    float: left;
+    background-color: #51DBFF;
+}
+.card_hp:hover{
+    background-color: rgb(58, 77, 221);
+    transition: 1.2s;
+}
+.card_hp p{
+    color: white;
+    margin: 0;
+    font-size: 35px;
+    font-style: initial;
+}
+.text_left {
+    color:rgb(247, 195, 99);
+    position: absolute;
+    top: 420px;
+    left: 30px;
+    font-size: 20px;
+    float: left;
+    padding-top: 60px;
+    width: 280px;
+    height: 200px;
+}
+.text_right{
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 45px;
+    font-size: 20px;
+    float: right;
+    padding-top: 60px;
+    width: 180px;
+    height: 200px;
+}

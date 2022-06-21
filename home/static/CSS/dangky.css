@@ -1,0 +1,79 @@
+label[for="id_email"]
+{
+    display:none;
+}
+label[for="id_password2"]
+{
+    display:none;
+}
+body {
+    background: url(../IMG/dangky.jpg)no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+.header-w3l {
+    padding-top: 3em;
+}
+.header-w3l h1 {
+    font-size: 3em;
+    color: #0cecec;
+    letter-spacing: 8px;
+    font-weight: 500;
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 5px 3px 5px #101010;
+}
+/*--//header--*/
+.thongbao{
+    color: red;
+    position: absolute;
+    font-weight: bold;
+    top: 120px;
+    left: 420px;
+    font-size: 20px;
+}
+.errorlist{
+    color: black;
+    left: 570px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.sub-w3l {
+    margin-top: 2em;
+}
+#thoat {
+    color: white;
+    background: #ea2858;
+    border: none;
+    padding: .7em 3em;
+    margin-left: 15px;
+    outline: none;
+    width: 100%;
+    font-size: 1em;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    border-radius: 30px;
+}
+#thoat:hover {
+    background: #fff;
+    color: black;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;
+}

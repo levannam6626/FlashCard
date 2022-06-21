@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'CSS/home.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/xemdanhsachhocphan.css'%}">
+       
+    </head>
+    {% csrf_token %}
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="header_start">
+                    <span>FlashCard</span>
+                    <ul class="menu">
+                        <li style="padding-left:80px"><a href="{% url 'home'%}">Trang chủ</a></li>
+                        <li><a href="{% url 'themhocphan'%}">Tạo học phần mới</a></li>
+                        <div id="cover">
+                            {% csrf_token %}
+                            <form method="get">
+                                <div class="tb">
+                                <div class="td"><input type="text" placeholder="Search" name="search"></div>
+                                <div class="td" id="s-cover">
+                                  <button type="submit">
+                                    <div id="s-circle"></div>
+                                    <span></span>
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                        </div>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button value="laptrinh" class="dropbtn">{{taikhoan.username}}</button>
+                    <div id="laptrinh" class="dropdown-content">
+                        <a href="{% url 'dangxuat'%}">Log out</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "footer">
+                <div class = "danhsachcacbaihoc">
+                    <li><p><u>Danh sách các bài học:</u></p>
+                    </li>
+                </div>
+                <div class = "hocphan">
+                    {% for hocphan in hocphans%}
+                    <div class = 'card_hp'>
+                        <a href="{% url 'chitiet' hocphan.tenhocphan%}" >
+                            <p align = "center">{{hocphan.tenhocphan}}</p>
+                        </a>
+                        <div class="dropdown">
+                            <li class ="menuhp"><a id="optionshp" >...</a>
+                                <ul class='sub_menuhp'>
+                                    <li><a href="{% url 'suahocphan' hocphan.tenhocphan%}">sửa</a></li>
+                                    <li><a href="{% url 'xoahocphan' hocphan.tenhocphan%}">xóa</a></li>
+                                </ul>
+                            </li>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% block scripts %}
+            <script src="{% static 'SCRIPTS/home.js'%}"></script>
+        {% endblock %}
+    </body>
+</html>
+

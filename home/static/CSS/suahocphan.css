@@ -1,0 +1,16 @@
+#id_taikhoan
+{
+    display: none;
+}
+label[for="id_taikhoan"]
+{
+    display:none;
+}
+label[for="id_tenhocphan"]
+{
+    display:none;
+}
+label[for="id_mota"]
+{
+    display:none;
+}

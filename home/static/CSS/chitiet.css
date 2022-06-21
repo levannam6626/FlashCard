@@ -1,0 +1,88 @@
+.chitiet{
+    padding-top: 80px;
+    width: 100%;
+}
+.chitiet h3{
+    font-size: 70px;
+    font-style: italic;
+}
+.left_chitiet
+{
+    margin: 25px;
+    height: 370px;
+    width: 900px;
+    border-radius: 20px;
+    border: 0;
+    text-decoration: none;
+    float: left;
+    background-color: #51DBFF;
+    margin-left: 150px;
+}
+.quanlythe{
+    display: none;
+}
+.quanlythe>p{
+    display: none;
+}
+.left{
+    width: 1130px;
+    float: left;
+}
+.left_chitiet{
+    color: white;
+    font-size: 60px;
+    font-style: initial;
+}
+.left_chitiet:hover{
+    background-color: rgb(58, 77, 221);
+    transition: 1.2s;
+}
+.btn_chuyenthe{
+    width: 200px;
+    height: 30px;
+    display: flex;
+    margin-left: 40px;
+}
+.btn_chuyenthe button{
+    height: 25px;
+    width: 25px;
+    border: 0;
+    background-color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+.btn_chuyenthe p{
+    height: 25px;
+    width: 25px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+.right_chitiet{
+    margin-right: 20px;
+    margin-top: 15px;
+    padding: 0px;
+    width: 160px;
+    height: 40%;
+    max-height: 430px;
+    float: right;
+    border-radius: 5px;
+    background-color: #51DBFF;
+}
+.right_chitiet li{
+    list-style-type: none;
+    margin: 40px 15px;
+    background-color: #3380CB;
+    border: 1px;
+    border-radius: 5px;
+    height: 60px;
+    padding-top: 12px;
+}
+.right_chitiet li:hover{
+    background-color: blue;
+}
+.right_chitiet li a{
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,49 @@
+body {
+    background: url(../IMG/domixi.png)no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+.header-w3l {
+    padding-top: 4em;
+}
+.header-w3l h1 {
+    font-size: 3em;
+    color: #0cecec;
+    letter-spacing: 8px;
+    font-weight: 500;
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 5px 3px 5px #101010;
+}
+
+#id_taikhoan
+{
+    display: none;
+}
+label[for="id_taikhoan"]
+{
+    display:none;
+}
+label[for="id_tenhocphan"]
+{
+    display:none;
+}
+label[for="id_mota"]
+{
+    display:none;
+}
+.thongbao{
+    color: red;
+    position: absolute;
+    font-weight: bold;
+    top: 120px;
+    left: 600px;
+    font-size: 20px;
+}

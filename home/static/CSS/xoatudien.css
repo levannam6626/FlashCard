@@ -1,0 +1,32 @@
+.frame-notification h3{
+    font-size: 20px;
+}
+.button{
+    display: flex;
+}
+.button input{
+    margin-top: 90px;
+    margin-right: 80px;
+    font-size: 20px;
+    margin-left: 90px;
+    background-color: orange;
+    border: 0;
+    padding: 3px 5px;
+    font-weight: bold;
+    color: red;
+    border-radius: 3px;
+}
+.button li{
+    list-style-type: none;
+    border: 0px;
+    width: 60px;
+    margin-top: 90px;
+    margin-left: 30px;
+    border-radius: 7px;
+    background-color: orange;
+    padding-top: 5px;
+}
+.button a{
+    color: red;
+    font-weight: bold;
+}

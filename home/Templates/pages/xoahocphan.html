@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'CSS/themtudien.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/xoatudien.css'%}">
+    </head>
+    <body>
+        <script src="" async defer></script>
+        <center>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="frame-notification">
+                    <h3>Bạn có muốn xóa học phần "{{ hocphan.tenhocphan }}"này không?</h3>
+                    <div class="button">
+                        <input class="btn btn-danger" type="submit" value="Đồng ý" />
+                        <li>
+                            <a href="../" class="btn btn-primary">Hủy</a>
+                        </li>
+                    </div>
+                </div>
+            </form>
+        </center>
+    </body>
+</html>

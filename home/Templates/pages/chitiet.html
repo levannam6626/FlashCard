@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'CSS/home.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/chitiet.css'%}">
+    </head>
+    <body>
+        <script src="" async defer></script>
+        <center>
+            {% csrf_token %}
+            <div class='container'>
+                <div class="header">
+                    <div class="header_start">
+                        <span>FlashCard</span>
+                        <ul class="menu">
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button value="laptrinh" class="dropbtn">{{taikhoan.username}}</button>
+                        <div id="laptrinh" class="dropdown-content">
+                            <a href="{% url 'dangxuat'%}">Log out</a>
+                        </div>
+                        {% block scripts %}
+                            <script src="{% static 'SCRIPTS/home.js'%}"></script>
+                        {% endblock %}
+                    </div>
+                </div>
+                <div class='chitiet'>
+                    <h3>Nội dung</h3>
+                    <div class ="left">
+                        <div>
+                            {% for tudien in tudiens%}
+                            <div id="{{tudien.id}}" class='quanlythe'>
+                                <button id="btn{{tudien.id}}" onclick="next(this.id)" class = 'left_chitiet'>
+                                    {{tudien.thuatngu}}
+                                </button>
+                                <p class="btn{{tudien.id}}">{{tudien.dinhnghia}}<p>
+                                <p class="btn{{tudien.id}}">{{tudien.thuatngu}}<p>
+                                </div>
+                            {%endfor%}
+                        </div>
+                        {% for tudien in tudiens|slice:":1"%}
+                        <div class = "btn_chuyenthe">
+                            <button id = 'left_btn' onclick="left_click()">&#60;</button>
+                            <p id="vitri" style="margin-left:80px">1</p>
+                            <p>/</p>
+                            <p id="length"style="margin-right:80px">1</p>
+                            <button id = 'right_btn' onclick="right_click()">&#62;</button>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    <div class = 'right_chitiet'>
+                        <ul class='chucnang'>
+                            <li>
+                                <a href="{% url 'themtudien' hocphan.tenhocphan %}">Thêm<a>
+                            </li>
+                            {% for tudien in tudiens|slice:":1"%}
+                            <li>
+                                <a id='sua' href="{% url 'suatudien' 3%}">Sửa<a>
+                            </li>
+                            <li>
+                                <a id='xoa' href="{% url 'xoatudien' 2%}">Xóa<a>
+                            </li>
+                            {%endfor%}
+                            <li>
+                                <a href="{% url 'xemdanhsachhocphan' %}">Thoát<a>
+                            </li>
+                        </ul>
+                    </div>
+                    <script type="text/javascript">
+                        var num = 0;
+                        var i =0;
+                        function next(id) {
+                            var p = document.getElementsByClassName(id);
+                            var button = document.getElementById(id);
+                            if(i >= p.length) {
+                               i = 0;
+                            }
+                            button.innerText = p[i].innerHTML;
+                            i++;
+                        }
+                        var idtudien;
+                        var divs = document.getElementsByClassName('quanlythe');
+                        idtudien = divs[num].id;
+                        divs[num].style.display = 'block';
+                        var p = document.getElementById('vitri');
+                        var plength = document.getElementById('length');
+                        plength.innerHTML = divs.length;
+                        var sua = document.getElementById('sua');
+                        var xoa = document.getElementById('xoa');
+                        sua.href="../suatudien/"+idtudien;
+                        xoa.href="../xoatudien/"+idtudien;
+                        function left_click()
+                        {
+                            num--;
+                            if(num < 0||num >= divs.length)
+                            {
+                                num = divs.length-1;
+                            }
+                            for(i =0;i<divs.length;i++)
+                            {
+                                if(i != num)
+                                {
+                                    divs[i].style.display = 'none';
+                                }
+                                else{
+                                    divs[num].style.display = 'block';
+                                }
+                            }
+                            idtudien = divs[num].id;
+                            sua.href="../suatudien/"+idtudien;
+                            xoa.href="../xoatudien/"+idtudien;
+                            p.innerHTML = num+1;
+                        }
+                        function right_click()
+                        {
+                            num++;
+                            if(num >= divs.length||num<0)
+                            {
+                                num =0;
+                            }
+                            for(i =0;i<divs.length;i++)
+                            {
+                                if(i != num)
+                                {
+                                    divs[i].style.display = 'none';
+                                }
+                                else{
+                                    divs[num].style.display = 'block';
+                                }
+                            }
+                            idtudien = divs[num].id;
+                            sua.href="../suatudien/"+idtudien;
+                            xoa.href="../xoatudien/"+idtudien;
+                            p.innerHTML = num+1;
+                        } 
+                    </script>
+                </div>
+            </div>
+        </center>
+    </body>
+</html>
